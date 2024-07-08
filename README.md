@@ -1,2 +1,3 @@
-# OI-Test_vsc
-OI Test vscode extension
+# oitest README
+
+otest v0.0.1 publish
