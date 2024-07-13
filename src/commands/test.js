@@ -20,7 +20,8 @@ function compile(problemFilePath, problemExePath, language) {
 	try {
 		execSync(compileCommand);
 	} catch (error) {
-		let error_info = error.stdout.toString();
+        console.log("ERROR");
+		let error_info = error.stderr.toString();
 		return error_info;
 	}
 	return true;
