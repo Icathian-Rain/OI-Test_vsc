@@ -1,7 +1,7 @@
 const {CodeLens, Range} = require('vscode');
 
 class CustomCodeLensProvider {
-    provideCodeLenses(document, token) {
+    provideCodeLenses(document) {
         const content = document.getText();
         const matchResults = content.match(/@oitest id=(\d+) lang=(\w+)/);
         if (!matchResults) {

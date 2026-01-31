@@ -80,7 +80,7 @@ function testProblem() {
         return;
     }
     let fileName = editor.document.fileName;
-    let problemID = fileName.substring(fileName.lastIndexOf("/") + 1, fileName.lastIndexOf("."));
+    let problemID = path.basename(fileName, path.extname(fileName));
     console.log(problemID);
     let workFolder = vscode.workspace.getConfiguration("oitest").get("workFolder");
     let language = vscode.workspace.getConfiguration("oitest").get("language");
@@ -90,11 +90,11 @@ function testProblem() {
         return;
     }
     // 获取当前打开的文件夹
-    let folderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-    if (folderPath === undefined) {
+    if (!vscode.workspace.workspaceFolders || vscode.workspace.workspaceFolders.length === 0) {
         vscode.window.showErrorMessage("Please open a folder!");
         return;
     }
+    let folderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
     // 进入工作文件夹
     let workFolderPath = path.join(folderPath, workFolder);
     if (!fs.existsSync(workFolderPath)) {

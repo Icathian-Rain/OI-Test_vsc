@@ -28,16 +28,16 @@ function newProblem() {
 		prompt: "Problem ID"
 	}).then(value => {
 		let problemID = value;
-		if (problemID === undefined) {
+		if (!problemID) {
 			vscode.window.showErrorMessage("Please input a problem ID!");
 			return;
 		}
 		// 获取当前打开的文件夹
-		let folderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-		if (folderPath === undefined) {
+		if (!vscode.workspace.workspaceFolders || vscode.workspace.workspaceFolders.length === 0) {
 			vscode.window.showErrorMessage("Please open a folder!");
 			return;
 		}
+		let folderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
 		// 读取模板文件
 		let workFolder = vscode.workspace.getConfiguration("oitest").get("workFolder");
 		let language = vscode.workspace.getConfiguration("oitest").get("language");

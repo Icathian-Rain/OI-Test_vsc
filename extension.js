@@ -1,10 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-const fs = require("fs");
-const path = require("path");
-const { execSync } = require('child_process');
-// const color = require('color');
 const {newProblem} = require('./src/commands/new');
 const {testProblem} = require('./src/commands/test');
 const {CustomCodeLensProvider} = require('./src/codeLens/codelens');
