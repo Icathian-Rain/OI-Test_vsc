@@ -2,3 +2,4 @@ node_modules/
 .vscode
 *.vsix
 CLAUDE.md
+.vscode-test/
