@@ -72,9 +72,9 @@ function newProblem() {
 		}
 
 		// 创建输入文件 打开
-		newAndOpen(path.join(problemFolderPath, problemID + ".in"), "");
+		newAndOpen(path.join(problemFolderPath, "1.in"), "");
 		// 创建答案文件 打开
-		newAndOpen(path.join(problemFolderPath, problemID + ".ans"), "");
+		newAndOpen(path.join(problemFolderPath, "1.ans"), "");
 	});
 }
 
